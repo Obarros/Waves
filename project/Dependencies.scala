@@ -64,8 +64,10 @@ object Dependencies {
     "org.fusesource.leveldbjni" % "leveldbjni-all" % "1.8"
   )
 
-  lazy val metrics = Seq("core", "system-metrics").map(kamonModule) ++ Seq(
+  lazy val metrics = Seq("core", "system-metrics", "akka-2.4").map(kamonModule) ++ Seq(
     "org.influxdb" % "influxdb-java" % "2.7",
+    "io.kamon" %% "kamon-autoweave" % "0.6.5",
+    "io.kamon" %% "kamon-log-reporter" % "0.6.7",
     "io.kamon" %% "kamon-influxdb" % "0.6.8" exclude("org.asynchttpclient", "async-http-client")
   )
 
